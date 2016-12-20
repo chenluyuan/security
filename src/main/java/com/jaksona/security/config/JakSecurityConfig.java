@@ -1,11 +1,16 @@
 package com.jaksona.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+
+import javax.sql.DataSource;
 
 /**
  * 安全配置
@@ -25,11 +30,18 @@ public class JakSecurityConfig {
     @Configuration
     @EnableWebSecurity
     static class JakWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
+
+        private DataSource dataSource;
+
+        @Autowired
+        public JakWebSecurityConfigurer(DataSource dataSource) {
+            this.dataSource = dataSource;
+        }
+
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                        .antMatchers("/", "/home").permitAll()
                         .anyRequest().authenticated()
                         .and()
                     .formLogin()
@@ -43,8 +55,21 @@ public class JakSecurityConfig {
         @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth
-                    .inMemoryAuthentication()
-                        .withUser("user").password("user").roles("USER");
+                    .jdbcAuthentication()
+                        .dataSource(dataSource);
+        }
+
+
+        @Override
+        public AuthenticationManager authenticationManagerBean() throws Exception {
+            return super.authenticationManagerBean();
+        }
+
+
+        @Override
+        public UserDetailsService userDetailsServiceBean() throws Exception {
+            return super.userDetailsServiceBean();
         }
     }
+
 }
