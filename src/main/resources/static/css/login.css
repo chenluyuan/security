@@ -1,0 +1,135 @@
+.login-page, .login-modal, .reset-password-page {
+    padding: 125px 0 50px;
+    text-align: center;
+}
+.login-page .logo img, .login-page .logo img, .login-modal .logo img, .reset-password-page .logo img {
+    width: 252px;
+}
+.login-page .title, .login-modal .title, .reset-password-page .title {
+    margin: 70px auto 50px;
+    border-bottom: 1px solid #eeeeee;
+    color: #b1b1b1;
+}
+.login-page .title span, .login-modal .title span, .reset-password-page .title span {
+    position: relative;
+    top: 10px;
+    padding: 0 30px;
+    background: white;
+}
+.login-page .title span .active, .login-modal .title span .active, .reset-password-page .title span .active {
+    color: #555555;
+}
+.login-page .title span a, .login-modal .title span a, .reset-password-page .title span a {
+    color: #b1b1b1;
+}
+.login-page form, .login-modal form {
+    padding-bottom: 15px;
+    margin: 0 auto 25px;
+    border-bottom: 1px solid #eeeeee;
+}
+.login-page form, .login-modal form, .reset-password-page form {
+    width: 300px;
+}
+.login-page .input-prepend, .login-modal .input-prepend, .reset-password-page .input-prepend {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.login-page .input-prepend input, .login-modal .input-prepend input, .reset-password-page .input-prepend input {
+    width: 228px;
+    width: calc(100% - 44px);
+    height: 44px;
+    padding: 4px 12px;
+    box-sizing: border-box;
+}
+.login-page .input-prepend .add-on, .login-modal .input-prepend .add-on, .reset-password-page .input-prepend .add-on {
+    width: 34px;
+    height: 34px;
+    background: none;
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 34px;
+}
+.login-page .captcha, .login-modal .captcha, .reset-password-page .captcha {
+    text-align: left;
+    font-size: 0;
+    white-space: nowrap;
+}
+.login-page .captcha input, .login-modal .captcha input, .reset-password-page .captcha input {
+    width: 165px;
+    height: 44px;
+    margin-right: 10px;
+    padding: 4px 12px;
+    box-sizing: border-box;
+}
+.login-page .submit-button, .login-modal .submit-button, .reset-password-page .submit-button {
+    width: 100%;
+}
+.login-page .sign-in .control-group, .login-modal .sign-in .control-group, .reset-password-page .sign-in .control-group {
+    width: 100%;
+    margin: 15px 0 0;
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.login-page .sign-in .icheckbox_minimal, .login-modal .sign-in .icheckbox_minimal, .reset-password-page .sign-in .icheckbox_minimal {
+    top: -2px;
+    display: inline-block;
+}
+.login-page .sign-in .control-group a, .login-modal .sign-in .control-group a, .reset-password-page .sign-in .control-group a {
+    float: right;
+}
+.switch_sign_in_name, .switch_sign_in_name:focus {
+    color: #15a7f0;
+}
+.input-append, .input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    font-size: 0;
+    white-space: nowrap;
+}
+.mobile-verify {
+    position: relative;
+    margin-bottom: 15px;
+}
+.mobile-verify .choose_phone {
+    position: relative;
+    padding: 0px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+.mobile-verify .choose_phone .selector {
+    width: 60px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 0px;
+    padding-right: 5px;
+    border: none;
+    border-right: 1px solid #cccccc;
+    border-radius: 0px;
+    background-color: transparent;
+}
+.mobile-verify .choose_phone .dropdown-menu {
+    top: 32px;
+    left: -1px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #fafafa;
+}
+.mobile-verify .choose_phone .dropdown-menu li {
+    background-color: #fafafa;
+    text-align: left;
+}
+.mobile-verify .choose_phone input {
+    width: 227px;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+.signin_error {
+    color: #d96f5d;
+}
