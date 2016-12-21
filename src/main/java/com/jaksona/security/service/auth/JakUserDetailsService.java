@@ -16,10 +16,6 @@ import javax.annotation.Resource;
 @Service
 public class JakUserDetailsService implements UserDetailsService {
 
-    @Resource
-    private AclService aclService;
-
-
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return null;
