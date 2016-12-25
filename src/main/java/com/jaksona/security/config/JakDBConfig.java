@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import java.util.List;
  * @date 12/20/16
  */
 @Configuration
+@EnableTransactionManagement
 @PropertySource("classpath:jdbc.properties")
 public class JakDBConfig {
 
@@ -69,6 +72,14 @@ public class JakDBConfig {
         StatFilter statFilter = new StatFilter();
         statFilter.setMergeSql(true);
         return statFilter;
+    }
+
+    @Bean
+    @Scope("singleton")
+    public DataSourceTransactionManager transactionManager() {
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+        transactionManager.setDataSource(dataSource());
+        return transactionManager;
     }
 
     @Bean
